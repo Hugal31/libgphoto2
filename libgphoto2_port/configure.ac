@@ -456,6 +456,18 @@ AS_VAR_IF([enable_ptpip], [yes], [dnl
 	IOLIB_LIST="$IOLIB_LIST ptpip"
 ])
 
+AC_ARG_ENABLE([ccapi],
+	[AS_HELP_STRING([--disable-ccapi],
+	                [disable the 'ccapi' port driver for TCP/IP connected PTP cameras])],
+	[], [dnl
+		enable_ccapi=yes
+])
+dnl ccapi - for Canon over Wi-Fi.
+AS_VAR_IF([enable_ccapi], [yes], [dnl
+	IOLIB_LIST="$IOLIB_LIST ccapi"
+])
+
+
 # ----------------------------------------------------------------------
 # Define IOLIB stuff
 # ----------------------------------------------------------------------

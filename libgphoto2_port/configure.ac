@@ -243,6 +243,17 @@ AC_COMPILE_IFELSE([AC_LANG_SOURCE([[
 CPPFLAGS="$CPPFLAGS_save"
 ],[],[default-on],[http://www.sourceforge.net/projects/libexif])dnl
 
+GP_CHECK_LIBRARY([LIBXML2],[libxml-2.0],[>= 2.0],
+                [libxml/parser.h],[xmlFirstElementChild],[],[],
+                [default-on],
+                [http://xmlsoft.org]
+)
+
+GP_CHECK_LIBRARY([GSSDP],[gssdp-1.6],[],
+                 [libgssdp/gssdp.h],[gssdp_client_new_full],[],[],
+                 [default-on],[]
+)
+GP_CONFIG_MSG([gssdp support for ccapi auto discovery],[${have_GSSDP}])
 
 
 dnl ---------------------------------------------------------------------------

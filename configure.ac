@@ -376,12 +376,6 @@ GP_CHECK_LIBRARY([LIBJSON],[json-c],[],
 )
 GP_CONFIG_MSG([json support for ccapi],[${have_LIBJSON}])
 
-GP_CHECK_LIBRARY([GSSDP],[gssdp-1.6],[],
-                 [libgssdp/gssdp.h],[gssdp_client_new_full],[],[],
-                 [default-on],[]
-)
-GP_CONFIG_MSG([gssdp support for ccapi auto discovery],[${have_GSSDP}])
-
 dnl ---------------------------------------------------------------------------
 dnl check for libgd
 dnl they call it "gdlib" ... confusing.

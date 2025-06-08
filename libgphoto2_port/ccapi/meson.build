@@ -5,5 +5,8 @@ shared_module('ccapi',
   install: true,
   dependencies: [
     libgphoto2_port_dep,
+    libgssdp_dep,
+    libxml_dep,
+    libcurl_dep,
   ],
 )

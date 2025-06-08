@@ -370,6 +370,18 @@ GP_CHECK_LIBRARY([LIBCURL],[libcurl],[>= 7.1],
 )
 GP_CONFIG_MSG([CURL support for Lumix Wifi],[${have_LIBCURL}])
 
+GP_CHECK_LIBRARY([LIBJSON],[json-c],[],
+                 [json-c/json.h],[json_object_get],[],[],
+                 [default-on],[]
+)
+GP_CONFIG_MSG([json support for ccapi],[${have_LIBJSON}])
+
+GP_CHECK_LIBRARY([GSSDP],[gssdp-1.6],[],
+                 [libgssdp/gssdp.h],[gssdp_client_new_full],[],[],
+                 [default-on],[]
+)
+GP_CONFIG_MSG([gssdp support for ccapi auto discovery],[${have_GSSDP}])
+
 dnl ---------------------------------------------------------------------------
 dnl check for libgd
 dnl they call it "gdlib" ... confusing.
@@ -506,6 +518,7 @@ GP_CAMLIB([aox],[outdated])dnl
 GP_CAMLIB([ax203])dnl
 GP_CAMLIB([barbie],[outdated])dnl
 GP_CAMLIB([canon])dnl
+GP_CAMLIB([ccapi])dnl
 GP_CAMLIB([casio_qv],[outdated])dnl
 GP_CAMLIB([clicksmart310],[outdated])dnl
 GP_CAMLIB([digigr8])dnl

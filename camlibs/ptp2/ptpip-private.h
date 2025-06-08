@@ -45,7 +45,7 @@
 
 #include <sys/types.h> /* for ssize_t, size_t */
 
-#define PTPIP_DEFAULT_TIMEOUT_S 2
+#define PTPIP_DEFAULT_TIMEOUT_S 10
 #define PTPIP_DEFAULT_TIMEOUT_MS 500
 
 int ptpip_connect_with_timeout(int fd, const struct sockaddr *address, socklen_t address_len, int seconds, int milliseconds);

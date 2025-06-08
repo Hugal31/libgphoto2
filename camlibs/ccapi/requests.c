@@ -106,12 +106,7 @@ static int set_url(CURL *curl, Camera *camera, const char *path)
 			char *numEnd;
 			unsigned long long port = strtoull(secondColonLoc + 1, &numEnd, 10);
 			if (port == 443)
-			{
-				CURL_CHECK(curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0));
-				CURL_CHECK(curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0));
-				CURL_CHECK(curl_easy_setopt(curl, CURLOPT_SSL_VERIFYSTATUS, 0));
 				scheme = "https://";
-			}
 		}
 	}
 
@@ -133,6 +128,9 @@ static int ccapi_curl_perform(CURL *curl, const struct Buffer *put_buffer, struc
     buffer_init(buffer);
     CURL_CHECK(curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, &write_to_buffer));
     CURL_CHECK(curl_easy_setopt(curl, CURLOPT_WRITEDATA, buffer));
+    CURL_CHECK(curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0));
+    CURL_CHECK(curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0));
+    CURL_CHECK(curl_easy_setopt(curl, CURLOPT_SSL_VERIFYSTATUS, 0));
     CURL_CHECK_GOTO_LOG(curl_easy_perform(curl), "could not perform HTTP request", cleanup);
     CURL_CHECK_GOTO(curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &http_code), cleanup);
     

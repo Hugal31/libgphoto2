@@ -6,7 +6,10 @@ ccapi_la_LDFLAGS = $(iolib_ldflags)
 ccapi_la_CPPFLAGS = \
 	$(AM_CPPFLAGS) \
 	$(INTL_CFLAGS) \
+	$(LIBXML2_CFLAGS) \
+	$(GSSDP_CFLAGS) \
 	$(CPPFLAGS) 
 ccapi_la_DEPENDENCIES = $(iolib_dependencies)
-ccapi_la_LIBADD = $(iolib_libadd) $(INTLLIBS)
+ccapi_la_LIBADD = $(iolib_libadd)
+ccapi_la_LIBADD += $(LIBXML2_LIBS) $(GSSDP_LIBS) $(INTLLIBS)
 ccapi_la_SOURCES = ccapi/ccapi.c

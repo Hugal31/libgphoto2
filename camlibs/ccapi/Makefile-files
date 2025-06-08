@@ -19,18 +19,19 @@
 EXTRA_DIST               += %reldir%/ChangeLog
 
 EXTRA_DIST               += %reldir%/README.template
-noinst_DATA              += %reldir%/README.template
+camlibdoc_DATA           += %reldir%/README.template
 
-noinst_LTLIBRARIES       += ccapi.la
+EXTRA_LTLIBRARIES       += ccapi.la
 
-template_la_SOURCES       = %reldir%/ccapi.c
-							%reldir%/library.c
-							%reldir%/requests.c
+ccapi_la_SOURCES       = %reldir%/ccapi.c
+						 %reldir%/library.c
+						 %reldir%/requests.c
 
-template_la_CFLAGS        = $(camlib_cflags)
-template_la_CPPFLAGS      = $(camlib_cppflags)
-template_la_DEPENDENCIES  = $(camlib_dependencies)
-template_la_LDFLAGS       = $(camlib_ldflags)
-template_la_LIBADD        = $(camlib_libadd)
+ccapi_la_CFLAGS        = $(camlib_cflags)
+ccapi_la_CPPFLAGS      = $(camlib_cppflags)
+ccapi_la_DEPENDENCIES  = $(camlib_dependencies)
+ccapi_la_LDFLAGS       = $(camlib_ldflags)
+ccapi_la_LIBADD        = $(camlib_libadd)
 
-template_la_CFLAGS       += $(NO_UNUSED_CFLAGS)
+ccapi_la_CFLAGS		   += $(LIBJSON_CFLAGS) $(LIBCURL_CFLAGS)
+ccapi_la_LIBADD		   += $(LIBJSON_LIBS) $(LIBCURL_LIBS)

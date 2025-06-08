@@ -255,6 +255,11 @@ GP_CHECK_LIBRARY([GSSDP],[gssdp-1.6],[],
 )
 GP_CONFIG_MSG([gssdp support for ccapi auto discovery],[${have_GSSDP}])
 
+GP_CHECK_LIBRARY([LIBCURL],[libcurl],[>= 7.1],
+		[curl/curl.h],[curl_easy_init],[],[],
+                [default-on],
+		[https://www.curl.org]
+)
 
 dnl ---------------------------------------------------------------------------
 dnl serial

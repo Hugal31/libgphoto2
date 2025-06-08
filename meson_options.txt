@@ -2,17 +2,17 @@ option(
   'iolibs',
   type : 'array',
   choices : [
-    'disk', 'vusb', 'ptpip', 'serial', 'libusb1', 'usb', 'usbdiskdirect', 'usbscsi'
+    'ccapi', 'disk', 'vusb', 'ptpip', 'serial', 'libusb1', 'usb', 'usbdiskdirect', 'usbscsi'
   ],
   value : [
-    'disk', 'ptpip', 'serial', 'libusb1', 'usb', 'usbdiskdirect', 'usbscsi'
+    'ccapi', 'disk', 'ptpip', 'serial', 'libusb1', 'usb', 'usbdiskdirect', 'usbscsi'
   ]
 )
 option(
   'camlibs',
   type : 'array',
   choices : [
-    'adc65', 'agfa-cl20', 'aox', 'ax203', 'barbie', 'canon', 'casio',
+    'adc65', 'agfa-cl20', 'aox', 'ax203', 'barbie', 'ccapi', 'canon', 'casio',
     'clicksmart310', 'digigr8', 'digita', 'dimera', 'directory', 'docupen',
     'enigma13', 'fuji', 'gsmart300', 'hp215', 'iclick', 'jamcam', 'jd11',
     'jl2005a', 'jl2005c', 'kodak', 'konica', 'largan', 'lg_gsm', 'lumix',

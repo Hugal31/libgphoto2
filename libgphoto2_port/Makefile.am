@@ -61,6 +61,7 @@ iolib_libadd = $(top_builddir)/libgphoto2_port/libgphoto2_port.la
 
 AM_CPPFLAGS += -I$(top_srcdir)
 
+include ccapi/Makefile-files
 include disk/Makefile-files
 include ptpip/Makefile-files
 include serial/Makefile-files

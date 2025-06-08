@@ -9668,7 +9668,7 @@ camera_init (Camera *camera, GPContext *context)
 	SET_CONTEXT(camera, context);
 
 	tries = 0;
-	sessionid = 1;
+	sessionid = 0x41;
 	while (1) {
 		ret = LOG_ON_PTP_E (ptp_opensession (params, sessionid));
 		if (ret == PTP_RC_SessionAlreadyOpened || ret == PTP_RC_OK)

@@ -66,6 +66,7 @@ libcurl_dep = dependency('libcurl', version: libcurl_req, required: ['lumix', 'p
 libgd_dep   = dependency('gdlib', version: libgd_req, required: 'docupen' in get_option('camlibs'))
 libexif_dep = dependency('libexif', version: libexif_req, required: false)
 libjpeg_dep = dependency('libjpeg', required: false)
+libjsonc_dep = dependency('json-c', required: 'ccapi' in get_option('camlibs'))
 intl_dep    = dependency('intl', required: false)
 
 add_project_arguments('-DMAIL_GPHOTO_DEVEL="<gphoto-devel@lists.sourceforge.net>"', language: 'c')

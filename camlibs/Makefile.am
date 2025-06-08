@@ -95,6 +95,7 @@ include ax203/Makefile-files
 include barbie/Makefile-files
 include canon/Makefile-files
 include casio/Makefile-files
+include ccapi/Makefile-files
 include clicksmart310/Makefile-files
 include digigr8/Makefile-files
 include digita/Makefile-files
